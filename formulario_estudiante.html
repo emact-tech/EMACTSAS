@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Estudiante - Sistema EMACT</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sistema <span>EMACT</span></div>
+            <p>Registro de datos del estudiante</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-header">
+            <h1>Formulario de Datos del Estudiante</h1>
+            <p>Complete toda la información requerida para el registro académico</p>
+        </div>
+        
+        <form id="studentForm" class="student-form">
+            <!-- Sección 1: Información básica -->
+            <fieldset>
+                <legend><i class="fas fa-user"></i> Información Personal</legend>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombres">Nombres Completos:</label>
+                        <input type="text" id="nombres" name="nombres" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos Completos:</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tipoDocumento">Tipo de documento:</label>
+                        <select id="tipoDocumento" name="tipoDocumento" required>
+                            <option value="">Seleccione...</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="PA">Pasaporte</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="documento">Número de documento:</label>
+                        <input type="text" id="documento" name="documento" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lugarNacimiento">Lugar de nacimiento:</label>
+                        <input type="text" id="lugarNacimiento" name="lugarNacimiento" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="horaNacimiento">Hora de nacimiento:</label>
+                        <input type="time" id="horaNacimiento" name="horaNacimiento" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edad">Edad cumplida:</label>
+                        <input type="number" id="edad" name="edad" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Seleccione...</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                        <option value="prefiero-no-decir">Prefiero no decir</option>
+                    </select>
+                </div>
+            </fieldset>
+            
+            <!-- Sección 2: Información de contacto -->
+            <fieldset>
+                <legend><i class="fas fa-address-book"></i> Información de Contacto</legend>
+                
+                <div class="form-group">
+                    <label for="direccion">Dirección donde reside:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="barrio">Barrio:</label>
+                        <input type="text" id="barrio" name="barrio" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="celular">Celular del estudiante:</label>
+                        <input type="tel" id="celular" name="celular" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </fieldset>
+            
+            <!-- Sección 3: Información adicional -->
+            <fieldset>
+                <legend><i class="fas fa-info-circle"></i> Información Adicional</legend>
+                
+                <div class="form-group">
+                    <label for="manager">¿Quién es tu manager?</label>
+                    <input type="text" id="manager" name="manager">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eps">EPS:</label>
+                        <input type="text" id="eps" name="eps" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="colegio">Colegio:</label>
+                        <input type="text" id="colegio" name="colegio">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactoEmergencia">Contacto de emergencia:</label>
+                    <input type="text" id="contactoEmergencia" name="contactoEmergencia" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="parentescoEmergencia">Parentesco:</label>
+                        <input type="text" id="parentescoEmergencia" name="parentescoEmergencia" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="celularEmergencia">Celular de emergencia:</label>
+                        <input type="tel" id="celularEmergencia" name="celularEmergencia" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="deporte">¿Practica algún deporte? ¿Cuál?</label>
+                        <input type="text" id="deporte" name="deporte">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hermanos">Número de hermanos:</label>
+                        <input type="number" id="hermanos" name="hermanos" min="0">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="idiomas">Idiomas que domina:</label>
+                    <input type="text" id="idiomas" name="idiomas">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group radio-group">
+                        <label>¿Fumas?</label>
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="fuma" value="si"> Sí
+                            </label>
+                            <label>
+                                <input type="radio" name="fuma" value="no" checked> No
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group radio-group">
+                        <label>¿Sufre de enfermedades?</label>
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="enfermedad" value="si" id="enfermedadSi"> Sí
+                            </label>
+                            <label>
+                                <input type="radio" name="enfermedad" value="no" id="enfermedadNo" checked> No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" id="enfermedadesGroup" style="display: none;">
+                    <label for="enfermedades">¿Cuáles enfermedades?</label>
+                    <textarea id="enfermedades" name="enfermedades"></textarea>
+                </div>
+            </fieldset>
+            
+            <!-- Sección 4: Consentimiento -->
+            <fieldset class="consentimiento-fieldset">
+                <legend><i class="fas fa-file-signature"></i> Consentimiento</legend>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consentimiento" name="consentimiento" required>
+                    <label for="consentimiento">Conforme a la ley 1581 del 2012: Acepto que mis datos personales sean tratados por EMACT SAS y demás fines de la política de tratamiento de datos. Entiendo que tengo derecho a conocer, actualizar, rectificar y suprimir mis datos y cuando proceda revocar la autorización dada para su tratamiento.</label>
+                </div>
+            </fieldset>
+            
+            <div class="form-actions">
+                
+               <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Formulario
+                    </button>
+                <a href="index.html" class="btn btn-cancel">Volver al inicio</a>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> EMACT - Todos los derechos reservados</p>
+            <p>Sistema de gestión académica</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <script src="js/scripts.js"></script>
+    <script src="js/formulario.js"></script>
+</body>
+</html>

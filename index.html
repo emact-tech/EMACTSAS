@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema EMACT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sistema <span>EMACT</span></div>
+            <p>Plataforma de gestión académica y administrativa</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="menu-grid">
+            <!-- Paso 1 -->
+            <div class="menu-card">
+                <div class="card-header">Datos del Estudiante/Acudiente</div>
+                <div class="card-body">
+                    <span class="step-badge">PASO 1</span>
+                    <p>Registro de información personal, académica y de contacto de estudiantes y sus acudientes.</p>
+                    <a href="formulario_estudiante.html" class="btn" id="datosEstudianteBtn">Ingresar datos</a>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="menu-card">
+                <div class="card-header">Formulario para Facturación</div>
+                <div class="card-body">
+                    <span class="step-badge">PASO 2</span>
+                    <p>Complete los datos necesarios para la generación de facturas y recibos de pago.</p>
+                    <a href="facturacion.html" class="btn" id="facturacionBtn">Facturación</a>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="menu-card">
+                <div class="card-header">Comprobante de Pago</div>
+                <div class="card-body">
+                    <span class="step-badge">PASO 3</span>
+                    <p>Genere comprobantes de pago y documentos no facturables.</p>
+                    <a href="comprobantes.html" class="btn" id="comprobanteBtn">Comprobantes</a>
+                </div>
+            </div>
+
+            <!-- Problemas con comprobante -->
+            <div class="menu-card">
+                <div class="card-header" style="background-color: var(--accent);">Problemas con Comprobante</div>
+                <div class="card-body">
+                    <p>Reporte problemas con sus comprobantes de pago.</p>
+                    <a href="reportar_problema.html" class="btn btn-accent" id="problemasBtn">Reportar problema</a>
+                </div>
+            </div>
+
+            <!-- Profesores -->
+            <div class="menu-card">
+                <div class="card-header">Formulario Profesores</div>
+                <div class="card-body">
+                    <p>Acceso exclusivo para profesores. Para Registro</p>
+                    <a href="acceso_profesores.html" class="btn" id="profesoresBtn">Acceso profesores</a>
+                </div>
+            </div>
+
+            <!-- Soporte WhatsApp -->
+            <div class="menu-card">
+                <div class="card-header">Soporte y Ayuda</div>
+                <div class="card-body">
+                    <p>¿Necesita ayuda? Contáctenos para resolver sus dudas.</p>
+                    <button id="soporteBtn" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Contactar soporte
+                    </button>
+                    <div id="whatsappWarning" class="warning-banner" style="display: none; margin-top: 10px;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span id="warningMessage"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> EMACT - Todos los derechos reservados</p>
+            <p>Sistema de gestión académica</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

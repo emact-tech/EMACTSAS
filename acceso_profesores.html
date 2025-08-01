@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Bancario - Sistema EMACT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sistema <span>EMACT</span></div>
+            <p>Registro de información bancaria</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h1><i class="fas fa-piggy-bank"></i> Registro Bancario</h1>
+                <p>Complete sus datos bancarios para recibir pagos</p>
+            </div>
+            
+            <form id="registroBancarioForm">
+                <fieldset>
+                    <legend><i class="fas fa-user-circle"></i> Información Personal</legend>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="tipo_identificacion" class="required">Tipo de identificación:</label>
+                            <select id="tipo_identificacion" name="tipo_identificacion" required>
+                                <option value="">Seleccione...</option>
+                                <option value="cc">Cédula de Ciudadanía</option>
+                                <option value="ce">Cédula de Extranjería</option>
+                                <option value="ti">Tarjeta de Identidad</option>
+                                <option value="pasaporte">Pasaporte</option>
+                                <option value="nit">NIT</option>
+                            </select>
+                            <div class="error-message" id="error-tipo-identificacion"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="numero_identificacion" class="required">Número de identificación:</label>
+                            <input type="text" id="numero_identificacion" name="numero_identificacion" required>
+                            <div class="error-message" id="error-numero-identificacion"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="primer_nombre" class="required">Primer nombre:</label>
+                            <input type="text" id="primer_nombre" name="primer_nombre" required>
+                            <div class="error-message" id="error-primer-nombre"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="segundo_nombre">Segundo nombre:</label>
+                            <input type="text" id="segundo_nombre" name="segundo_nombre">
+                        </div>
+                    </div>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="primer_apellido" class="required">Primer apellido:</label>
+                            <input type="text" id="primer_apellido" name="primer_apellido" required>
+                            <div class="error-message" id="error-primer-apellido"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="segundo_apellido">Segundo apellido:</label>
+                            <input type="text" id="segundo_apellido" name="segundo_apellido">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-address-card"></i> Información de Contacto</legend>
+                    
+                    <div class="form-group">
+                        <label for="direccion" class="required">Dirección de residencia:</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                        <div class="error-message" id="error-direccion"></div>
+                    </div>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="tipo_persona" class="required">Tipo de persona:</label>
+                            <select id="tipo_persona" name="tipo_persona" required>
+                                <option value="">Seleccione...</option>
+                                <option value="natural">Persona Natural</option>
+                                <option value="juridica">Persona Jurídica</option>
+                            </select>
+                            <div class="error-message" id="error-tipo-persona"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="municipio" class="required">Municipio/Departamento:</label>
+                            <input type="text" id="municipio" name="municipio" required>
+                            <div class="error-message" id="error-municipio"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="email" class="required">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="error-email"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="celular" class="required">Celular:</label>
+                            <input type="tel" id="celular" name="celular" required>
+                            <div class="error-message" id="error-celular"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rut">RUT (opcional):</label>
+                        <input type="text" id="rut" name="rut">
+                        <small>Si es persona jurídica, por favor adjunte su RUT</small>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-university"></i> Información Bancaria</legend>
+                    
+                    <div class="form-group">
+                        <label for="banco" class="required">Banco:</label>
+                        <select id="banco" name="banco" required>
+                            <option value="">Seleccione su banco...</option>
+                            <option value="caja_social">BANCO CAJA SOCIAL S.A.</option>
+                            <option value="davivienda">Banco Davivienda S.A.</option>
+                            <option value="gnb">BANCO GNB SUDAMERIS S.A</option>
+                            <option value="scotiabank">SCOTIABANK COLPATRIA S.A.</option>
+                            <option value="agrario">BANCO AGRARIO DE COLOMBIA S.A</option>
+                            <option value="villas">Banco Comercial AV Villas S.A.</option>
+                            <option value="bancien">BANCIEN S.A</option>
+                            <option value="microfinanzas">Banco de las Microfinanzas</option>
+                            <option value="w">Banco W S.A</option>
+                            <option value="coomeva">Banco Coomeva S.A</option>
+                            <option value="finandina">Banco Finandina S.A</option>
+                            <option value="coopcentral">El Banco Cooperativo Coopcentral / COOPCENTRAL</option>
+                            <option value="santander">BANCO SANTANDER DE NEGOCIOS COLOMBIA S. A</option>
+                            <option value="mundo_mujer">BANCO MUNDO MUJER S.A.</option>
+                            <option value="mibanco">Banco de la Microempresa de Colombia S.A. / Mibanco S.A</option>
+                            <option value="serfinanza">BANCO SERFINANZA S.A.</option>
+                            <option value="jp_morgan">BANCO J.P. MORGAN COLOMBIA S.A.</option>
+                            <option value="lulo">Lulo Bank S.A.</option>
+                            <option value="btg">Banco BTG Pactual Colombia S.A.</option>
+                            <option value="contactar">BANCO CONTACTAR S.A</option>
+                            <option value="nequi">NEQUI</option>
+                            <option value="daviplata">DAVIPLATA</option>
+                            <option value="nu">NU BANCO S.A</option>
+                            <option value="transfiya">Transfiya</option>
+                            <option value="bold">Bold</option>
+                        </select>
+                        <div class="error-message" id="error-banco"></div>
+                    </div>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="numero_cuenta" class="required">Número de cuenta:</label>
+                            <input type="text" id="numero_cuenta" name="numero_cuenta" required>
+                            <div class="error-message" id="error-numero-cuenta"></div>
+                            <small>Solo números, sin guiones o espacios</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipo_cuenta" class="required">Tipo de cuenta:</label>
+                            <select id="tipo_cuenta" name="tipo_cuenta" required>
+                                <option value="">Seleccione...</option>
+                                <option value="ahorro">Ahorros</option>
+                                <option value="corriente">Corriente</option>
+                            </select>
+                            <div class="error-message" id="error-tipo-cuenta"></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Formulario
+                    </button>
+                    <a href="index.html" class="btn btn-cancel">
+                        <i class="fas fa-arrow-left"></i> Volver al inicio
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> EMACT - Todos los derechos reservados</p>
+            <p>Sistema de gestión académica</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

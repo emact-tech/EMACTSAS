@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte EMACT - WhatsApp Restringido</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="support-container">
+        <div class="support-header">
+            <h2><i class="fas fa-headset"></i> Soporte Técnico EMACT</h2>
+            <p>Estamos aquí para ayudarte con cualquier duda o problema</p>
+        </div>
+        
+        <button id="whatsappSupportBtn" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+        </button>
+        
+        <div class="restrictions">
+            <h3><i class="fas fa-exclamation-circle"></i> Restricciones del canal:</h3>
+            <ul>
+                <li>Solo soporte por mensaje de texto</li>
+                <li>No se atenderán videollamadas</li>
+                <li>No se aceptarán archivos multimedia</li>
+                <li>Horario de atención: Lunes a Viernes 8am - 6pm</li>
+            </ul>
+        </div>
+        
+        <div id="warningBanner" class="warning-banner">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="warningText"></span>
+        </div>
+    </div>
+
+    <script src="soporte-whatsapp.js"></script>
+</body>
+</html>

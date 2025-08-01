@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante de Pago - Sistema EMACT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sistema <span>EMACT</span></div>
+            <p>Generación de comprobantes de pago</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h1><i class="fas fa-receipt"></i> Comprobante de Pago</h1>
+                <p>Complete los datos para generar su comprobante de pago</p>
+            </div>
+            
+            <form id="comprobanteForm">
+                <fieldset>
+                    <legend><i class="fas fa-file-invoice"></i> Información del Pago</legend>
+                    
+                    <div class="form-group">
+                        <label for="numero_comprobante" class="required">Número de Comprobante:</label>
+                        <input type="text" id="numero_comprobante" name="numero_comprobante" required>
+                        <div class="error-message" id="error-numero-comprobante"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="valor_pagar" class="required">Valor a Pagar ($):</label>
+                        <input type="number" id="valor_pagar" name="valor_pagar" min="0" step="0.01" required>
+                        <div class="error-message" id="error-valor-pagar"></div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-user-tie"></i> Información Personal</legend>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="tipo_identificacion" class="required">Tipo de identificación:</label>
+                            <select id="tipo_identificacion" name="tipo_identificacion" required>
+                                <option value="">Seleccione...</option>
+                                <option value="cc">Cédula de Ciudadanía</option>
+                                <option value="ce">Cédula de Extranjería</option>
+                                <option value="ti">Tarjeta de Identidad</option>
+                                <option value="pasaporte">Pasaporte</option>
+                                <option value="nit">NIT</option>
+                            </select>
+                            <div class="error-message" id="error-tipo-identificacion"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="numero_identificacion" class="required">Número de identificación:</label>
+                            <input type="text" id="numero_identificacion" name="numero_identificacion" required>
+                            <div class="error-message" id="error-numero-identificacion"></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-address-card"></i> Información de Contacto</legend>
+                    
+                    <div class="two-columns">
+                        <div class="form-group">
+                            <label for="telefono" class="required">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                            <div class="error-message" id="error-telefono"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="required">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="error-email"></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-university"></i> Información Bancaria</legend>
+                    
+                    <div class="form-group">
+                        <label for="banco" class="required">Banco:</label>
+                        <select id="banco" name="banco" required>
+                            <option value="">Seleccione su banco...</option>
+                            <option value="bogota">Banco de Bogotá S.A.</option>
+                            <option value="popular">Banco Popular S.A.</option>
+                            <option value="itau">Itaú Colombia S.A.</option>
+                            <option value="bancolombia">Bancolombia S.A</option>
+                            <option value="occidente">Banco de Occidente</option>
+                            <option value="caja_social">BANCO CAJA SOCIAL S.A.</option>
+                            <option value="davivienda">Banco Davivienda S.A.</option>
+                            <option value="gnb">BANCO GNB SUDAMERIS S.A</option>
+                            <option value="scotiabank">SCOTIABANK COLPATRIA S.A.</option>
+                            <option value="agrario">BANCO AGRARIO DE COLOMBIA S.A</option>
+                            <option value="villas">Banco Comercial AV Villas S.A.</option>
+                            <option value="bancien">BANCIEN S.A</option>
+                            <option value="microfinanzas">Banco de las Microfinanzas</option>
+                            <option value="w">Banco W S.A</option>
+                            <option value="coomeva">Banco Coomeva S.A</option>
+                            <option value="finandina">Banco Finandina S.A</option>
+                            <option value="coopcentral">El Banco Cooperativo Coopcentral / COOPCENTRAL</option>
+                            <option value="santander">BANCO SANTANDER DE NEGOCIOS COLOMBIA S. A</option>
+                            <option value="mundo_mujer">BANCO MUNDO MUJER S.A.</option>
+                            <option value="mibanco">Banco de la Microempresa de Colombia S.A. / Mibanco S.A</option>
+                            <option value="serfinanza">BANCO SERFINANZA S.A.</option>
+                            <option value="jp_morgan">BANCO J.P. MORGAN COLOMBIA S.A.</option>
+                            <option value="lulo">Lulo Bank S.A.</option>
+                            <option value="btg">Banco BTG Pactual Colombia S.A.</option>
+                            <option value="contactar">BANCO CONTACTAR S.A</option>
+                            <option value="nequi">NEQUI</option>
+                            <option value="daviplata">DAVIPLATA</option>
+                            <option value="nu">NU BANCO S.A</option>
+                            <option value="transfiya">Transfiya</option>
+                            <option value="bold">Bold</option>
+                        </select>
+                        <div class="error-message" id="error-banco"></div>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-file-download"></i> Generar Comprobante
+                    </button>
+                    <a href="index.html" class="btn btn-cancel">
+                        <i class="fas fa-arrow-left"></i> Volver al inicio
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> EMACT - Todos los derechos reservados</p>
+            <p>Sistema de gestión académica</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

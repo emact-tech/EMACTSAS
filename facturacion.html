@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Facturación - Sistema EMACT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Sistema <span>EMACT</span></div>
+            <p>Formulario de facturación electrónica</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <h1><i class="fas fa-file-invoice-dollar"></i> Formulario para facturación</h1>
+                <p>Complete los datos requeridos para generar su factura electrónica</p>
+            </div>
+            
+            <form id="identificacionForm">
+                <fieldset>
+                    <legend><i class="fas fa-id-card"></i> Información del Cliente</legend>
+                    
+                    <div class="form-group">
+                        <label for="tipo_identificacion" class="required">Tipo de identificación</label>
+                        <select id="tipo_identificacion" name="tipo_identificacion" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="cedula">Cédula</option>
+                            <option value="nit">NIT</option>
+                            <option value="pasaporte">Pasaporte</option>
+                            <option value="cedula_extranjeria">Cédula de extranjería</option>
+                        </select>
+                        <span class="error-message" id="error-tipo-identificacion"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero_identificacion" class="required">Número de identificación</label>
+                        <input type="text" id="numero_identificacion" name="numero_identificacion" required>
+                        <span class="error-message" id="error-numero-identificacion"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="razon_social" class="required">Razón social o nombre completo</label>
+                        <input type="text" id="razon_social" name="razon_social" required>
+                        <span class="error-message" id="error-razon-social"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required">Tipo de persona</label>
+                        <div class="radio-group">
+                            <input type="radio" id="persona_natural" name="tipo_persona" value="natural" required>
+                            <label for="persona_natural">Persona natural</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="persona_juridica" name="tipo_persona" value="juridica">
+                            <label for="persona_juridica">Persona jurídica</label>
+                        </div>
+                        <span class="error-message" id="error-tipo-persona"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="responsabilidad_tributaria" class="required">Responsabilidad tributaria</label>
+                        <select id="responsabilidad_tributaria" name="responsabilidad_tributaria" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="responsable_iva">Responsable de IVA</option>
+                            <option value="no_responsable_iva">No responsable de IVA</option>
+                            <option value="gran_contribuyente">Gran contribuyente</option>
+                            <option value="autorretenedor">Autorretenedor</option>
+                        </select>
+                        <span class="error-message" id="error-responsabilidad-tributaria"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-map-marker-alt"></i> Información de Ubicación</legend>
+                    
+                   <div class="form-group">
+                    <label for="ubicacion" class="required">Distrito/Departamento:</label>
+                    <select id="ubicacion" name="ubicacion" required>
+                        <option value="">Seleccione una ubicación</option>
+                        <option value="bogota">Bogotá D.C. (Distrito Capital)</option>
+                        <option value="amazonas">Amazonas</option>
+                        <option value="antioquia">Antioquia</option>
+                        <option value="arauca">Arauca</option>
+                        <option value="atlantico">Atlántico</option>
+                        <option value="bolivar">Bolívar</option>
+                        <option value="boyaca">Boyacá</option>
+                        <option value="caldas">Caldas</option>
+                        <option value="caqueta">Caquetá</option>
+                        <option value="casanare">Casanare</option>
+                        <option value="cauca">Cauca</option>
+                        <option value="cesar">Cesar</option>
+                        <option value="choco">Chocó</option>
+                        <option value="cordoba">Córdoba</option>
+                        <option value="cundinamarca">Cundinamarca</option>
+                        <option value="guainia">Guainía</option>
+                        <option value="guaviare">Guaviare</option>
+                        <option value="huila">Huila</option>
+                        <option value="guajira">La Guajira</option>
+                        <option value="magdalena">Magdalena</option>
+                        <option value="meta">Meta</option>
+                        <option value="nariño">Nariño</option>
+                        <option value="norte_santander">Norte de Santander</option>
+                        <option value="putumayo">Putumayo</option>
+                        <option value="quindio">Quindío</option>
+                        <option value="risaralda">Risaralda</option>
+                        <option value="san_andres">San Andrés y Providencia</option>
+                        <option value="santander">Santander</option>
+                        <option value="sucre">Sucre</option>
+                        <option value="tolima">Tolima</option>
+                        <option value="valle">Valle del Cauca</option>
+                        <option value="vaupes">Vaupés</option>
+                        <option value="vichada">Vichada</option>
+                    </select>
+                    <span class="error-message" id="error-ubicacion"></span>
+                </div>
+
+                    <div class="form-group">
+                        <label for="direccion" class="required">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                        <span class="error-message" id="error-direccion"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fas fa-address-book"></i> Información de Contacto</legend>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required>
+                        <span class="error-message" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono" class="required">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                        <span class="error-message" id="error-telefono"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular">Celular (opcional)</label>
+                        <input type="tel" id="celular" name="celular">
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Enviar Formulario
+                    </button>
+                    <a href="index.html" class="btn btn-cancel">
+                        <i class="fas fa-arrow-left"></i> Volver al inicio
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> EMACT - Todos los derechos reservados</p>
+            <p>Sistema de gestión académica</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
